@@ -64,9 +64,8 @@ std::vector<char> getPerm2(PMTree& tree, int num) {
 
     const std::vector<std::shared_ptr<TreeNode>>* level = &tree.getRoots();
     std::shared_ptr<TreeNode> current;
- 
-    for (int lvl = depth; lvl >= 1; --lvl) {
 
+    for (int lvl = depth; lvl >= 1; --lvl) {
         int64_t subtreeSize = factorial(lvl - 1);
 
         int64_t childIdx = idx / subtreeSize;
