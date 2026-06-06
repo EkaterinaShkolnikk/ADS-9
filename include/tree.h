@@ -38,7 +38,7 @@ class PMTree {
     explicit PMTree(const std::vector<char>& in) {
         std::vector<char> sorted = in;
         std::sort(sorted.begin(), sorted.end());
-     
+
         for (char c : sorted) {
             auto root = std::make_shared<TreeNode>(c);
             roots.push_back(root);
