@@ -1,7 +1,7 @@
 // Copyright 2022 NNTU-CS
 #ifndef INCLUDE_TREE_H_
 #define INCLUDE_TREE_H_
- 
+
 #include <vector>
 #include <memory>
 #include <algorithm>
@@ -35,16 +35,14 @@ class PMTree {
     }
 
  public:
-
     explicit PMTree(const std::vector<char>& in) {
-
         std::vector<char> sorted = in;
         std::sort(sorted.begin(), sorted.end());
-
+     
         for (char c : sorted) {
             auto root = std::make_shared<TreeNode>(c);
             roots.push_back(root);
- 
+
             std::vector<char> remaining;
             for (char r : sorted) {
                 if (r != c) remaining.push_back(r);
@@ -67,5 +65,5 @@ std::vector<std::vector<char>> getAllPerms(const PMTree& tree);
 std::vector<char> getPerm1(PMTree& tree, int num);
 
 std::vector<char> getPerm2(PMTree& tree, int num);
- 
-#endif
+
+#endif  // INCLUDE_TREE_H_
