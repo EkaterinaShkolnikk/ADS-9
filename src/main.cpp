@@ -13,8 +13,8 @@ static void printPerm(const std::vector<char>& perm) {
     std::cout << "\n";
 }
 
-static long long factorial(int n) {
-    long long f = 1;
+static int64_t factorial(int n) {
+    int64_t f = 1;
     for (int i = 2; i <= n; ++i) f *= i;
     return f;
 }
@@ -69,7 +69,7 @@ int main() {
 
         PMTree tree(in);
 
-        long long total = factorial(n);
+        int64_t total = factorial(n);
         int randNum = static_cast<int>(1 + std::rand() % total);
 
         const int REPS = 5;
@@ -82,7 +82,7 @@ int main() {
             t_all += std::chrono::duration<double, std::micro>(t1 - t0).count();
         }
         t_all /= REPS;
-        
+
         double t1f = 0;
         for (int r = 0; r < REPS; ++r) {
             auto t0 = std::chrono::high_resolution_clock::now();
